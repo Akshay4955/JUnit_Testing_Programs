@@ -8,6 +8,24 @@ public class Util {
         getDay();
         getConvertedTemperature();
         calculateMonthlyPayment();
+        getSquareRoot();
+    }
+
+    static void getSquareRoot() {
+        System.out.println("Enter the no to find square root");
+        Scanner input = new Scanner(System.in);
+        double c = input.nextDouble();
+        double t = c;
+        double l = 0.000000000000001;
+        double root;
+
+        while (true) {
+            root = 0.5 * (t + c / t);
+            if (Math.abs(root - t) < l)
+                break;
+            t = root;
+        }
+        System.out.println("Root is equal to " + root);
     }
 
     static void calculateMonthlyPayment() {
