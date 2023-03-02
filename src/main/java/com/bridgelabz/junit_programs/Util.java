@@ -10,13 +10,25 @@ public class Util {
         calculateMonthlyPayment();
         getSquareRoot();
         toBinary();
+        System.out.println();
+        swapNibbles();
+    }
+
+    static void swapNibbles() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a number for nibbles swapping");
+        int number = input.nextInt();
+        int swappedNo;
+        swappedNo = ((number & 0x0F) << 4 | (number & 0xF0) >> 4);
+        System.out.println("Number before swapping " + number);
+        System.out.println("Number after swapping " + swappedNo);
     }
 
     static void toBinary() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter the number");
+        System.out.println("Enter a number to get binary");
         int number = input.nextInt();
-        int[] array = new int[16];
+        int[] array = new int[8];
         int i = 0;
         while (number >= 1) {
             int remainder = number % 2;
