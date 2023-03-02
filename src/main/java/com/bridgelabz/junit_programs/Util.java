@@ -9,6 +9,24 @@ public class Util {
         getConvertedTemperature();
         calculateMonthlyPayment();
         getSquareRoot();
+        toBinary();
+    }
+
+    static void toBinary() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the number");
+        int number = input.nextInt();
+        int[] array = new int[16];
+        int i = 0;
+        while (number >= 1) {
+            int remainder = number % 2;
+            array[i] = remainder;
+            number /= 2;
+            i++;
+        }
+        for (int k = array.length - 1; k >= 0; k--) {
+            System.out.print(array[k]);
+        }
     }
 
     static void getSquareRoot() {
