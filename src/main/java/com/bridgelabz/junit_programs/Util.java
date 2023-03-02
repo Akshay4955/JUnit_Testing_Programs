@@ -7,6 +7,21 @@ public class Util {
 
         getDay();
         getConvertedTemperature();
+        calculateMonthlyPayment();
+    }
+
+    static void calculateMonthlyPayment() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter principle loan amount");
+        int P = input.nextInt();
+        System.out.println("Enter years to pay off");
+        int Y = input.nextInt();
+        System.out.println("Enter percentage of interest rate");
+        double R = input.nextDouble();
+        double r = R / 12 * 100;
+        int n = 12 * Y;
+        double monthlyPayment = (P * r) / (1 - Math.pow((1 + r), (-n)));
+        System.out.println("Monthly Payment is " + monthlyPayment);
     }
 
     static void getConvertedTemperature() {
